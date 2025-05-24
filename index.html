@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap 5 Exercises</title>
+  <!-- Bootstrap 5 CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+  <div class="container py-5">
+    <h1 class="mb-4">Bootstrap 5 Exercises</h1>
+
+    <!-- 1. Setting Up Bootstrap 5 -->
+    <section class="mb-5">
+      <h2>1. Setting Up Bootstrap 5</h2>
+      <!-- Exercise 1.1 -->
+      <div class="mb-3">
+        <h5>Exercise 1.1:</h5>
+        <p>Create a basic HTML page and link Bootstrap 5 via <strong>CDN</strong>.</p>
+        <!-- Example: This page itself uses Bootstrap 5 CDN -->
+      </div>
+      <!-- Exercise 1.2 -->
+      <div class="mb-3">
+        <h5>Exercise 1.2:</h5>
+        <p>Set up a project using <strong>npm</strong> or <strong>downloaded Bootstrap files</strong>. Use the downloaded files in a sample HTML page.</p>
+        <!-- Example: (Comment) You can use npm or download Bootstrap and link the CSS/JS files locally. -->
+      </div>
+    </section>
+
+    <!-- 2. Bootstrap Structure and Files -->
+    <section class="mb-5">
+      <h2>2. Bootstrap Structure and Files</h2>
+      <!-- Exercise 2.1 -->
+      <div class="mb-3">
+        <h5>Exercise 2.1:</h5>
+        <p>Explore the structure of the downloaded Bootstrap directory. Identify and explain the purpose of the <strong>CSS, JS, and icons folders</strong>.</p>
+        <!-- Example: (Comment) CSS for styles, JS for interactive components, icons for SVG icons. -->
+      </div>
+      <!-- Exercise 2.2 -->
+      <div class="mb-3">
+        <h5>Exercise 2.2:</h5>
+        <p>Modify your HTML to include Bootstrap's <strong>JavaScript plugins</strong> via <code>bootstrap.bundle.min.js</code>.</p>
+        <!-- Example: -->
+        <pre><code>&lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;</code></pre>
+      </div>
+    </section>
+
+    <!-- 3. Fundamentals of Responsive Grid Layout -->
+    <section class="mb-5">
+      <h2>3. Fundamentals of Responsive Grid Layout</h2>
+      <!-- Exercise 3.1 -->
+      <div class="mb-3">
+        <h5>Exercise 3.1:</h5>
+        <p>Create a container with <strong>three columns</strong> that stack vertically on mobile, two-per-row on tablets, and three-per-row on desktops.</p>
+        <!-- Example: -->
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-md-6 col-lg-4 mb-3">
+              <div class="p-3 bg-primary text-white">Column 1</div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 mb-3">
+              <div class="p-3 bg-secondary text-white">Column 2</div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 mb-3">
+              <div class="p-3 bg-success text-white">Column 3</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Exercise 3.2 -->
+      <div class="mb-3">
+        <h5>Exercise 3.2:</h5>
+        <p>Use <code>.container</code>, <code>.row</code>, and <code>.col-*</code> classes appropriately for responsive design.</p>
+        <!-- Example: (Comment) See above grid example. -->
+      </div>
+    </section>
+
+    <!-- 4. Column Layouts and Grid Classes -->
+    <section class="mb-5">
+      <h2>4. Column Layouts and Grid Classes</h2>
+      <!-- Exercise 4.1 -->
+      <div class="mb-3">
+        <h5>Exercise 4.1:</h5>
+        <p>Design a <strong>two-column layout</strong> with a sidebar (<code>col-md-3</code>) and content area (<code>col-md-9</code>).</p>
+        <!-- Example: -->
+        <div class="container">
+          <div class="row">
+            <div class="col-md-3 mb-3">
+              <div class="p-3 bg-warning">Sidebar</div>
+            </div>
+            <div class="col-md-9 mb-3">
+              <div class="p-3 bg-light border">Content Area</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Exercise 4.2 -->
+      <div class="mb-3">
+        <h5>Exercise 4.2:</h5>
+        <p>Create a <strong>four-column layout</strong> (<code>col-sm-3</code>) with equal width.</p>
+        <!-- Example: -->
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-3 mb-3"><div class="p-3 bg-info text-white">Col 1</div></div>
+            <div class="col-sm-3 mb-3"><div class="p-3 bg-info text-white">Col 2</div></div>
+            <div class="col-sm-3 mb-3"><div class="p-3 bg-info text-white">Col 3</div></div>
+            <div class="col-sm-3 mb-3"><div class="p-3 bg-info text-white">Col 4</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Alignment and Reordering in Grid -->
+    <section class="mb-5">
+      <h2>5. Alignment and Reordering in Grid</h2>
+      <!-- Exercise 5.1 -->
+      <div class="mb-3">
+        <h5>Exercise 5.1:</h5>
+        <p>Use <code>justify-content-center</code> and <code>align-items-center</code> to center content inside a row.</p>
+        <!-- Example: -->
+        <div class="container">
+          <div class="row justify-content-center align-items-center" style="height: 100px;">
+            <div class="col-4">
+              <div class="p-3 bg-danger text-white text-center">Centered Content</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Exercise 5.2 -->
+      <div class="mb-3">
+        <h5>Exercise 5.2:</h5>
+        <p>Reorder columns on different screen sizes using <code>order-md-2</code>, <code>order-md-1</code>.</p>
+        <!-- Example: -->
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 order-md-2 mb-3">
+              <div class="p-3 bg-dark text-white">Second on desktop</div>
+            </div>
+            <div class="col-md-6 order-md-1 mb-3">
+              <div class="p-3 bg-secondary text-white">First on desktop</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Responsive Flexbox Utilities -->
+    <section class="mb-5">
+      <h2>6. Responsive Flexbox Utilities</h2>
+      <!-- Exercise 7.1 -->
+      <div class="mb-3">
+        <h5>Exercise 7.1:</h5>
+        <p>Create a navbar using <code>d-flex</code>, <code>flex-column</code>, and <code>flex-md-row</code> for responsive behavior.</p>
+        <!-- Example: -->
+        <nav class="navbar bg-body-tertiary mb-3">
+          <div class="container-fluid d-flex flex-column flex-md-row">
+            <a class="navbar-brand" href="#">Brand</a>
+            <ul class="navbar-nav flex-row ms-md-auto">
+              <li class="nav-item mx-2"><a class="nav-link" href="#">Home</a></li>
+              <li class="nav-item mx-2"><a class="nav-link" href="#">About</a></li>
+              <li class="nav-item mx-2"><a class="nav-link" href="#">Contact</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <!-- Exercise 7.2 -->
+      <div class="mb-3">
+        <h5>Exercise 7.2:</h5>
+        <p>Use <code>justify-content-between</code> and <code>align-items-center</code> in a card layout.</p>
+        <!-- Example: -->
+        <div class="card mb-3">
+          <div class="card-body d-flex justify-content-between align-items-center">
+            <span>Left Content</span>
+            <span>Right Content</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Typography -->
+    <section class="mb-5">
+      <h2>7. Typography</h2>
+      <!-- Exercise 7.1 -->
+      <div class="mb-3">
+        <h5>Exercise 7.1:</h5>
+        <p>Create a sample page with different Bootstrap typography utilities: display-1, lead, text-muted, fw-bold, etc.</p>
+        <!-- Example: -->
+        <div class="mb-2">
+          <span class="display-1">Display 1</span>
+        </div>
+        <div class="mb-2">
+          <p class="lead">This is a lead paragraph.</p>
+        </div>
+        <div class="mb-2">
+          <span class="text-muted">Muted text</span>
+        </div>
+        <div class="mb-2">
+          <span class="fw-bold">Bold text</span>
+        </div>
+      </div>
+      <!-- Exercise 7.2 -->
+      <div class="mb-3">
+        <h5>Exercise 7.2:</h5>
+        <p>Use text-uppercase, text-lowercase, text-capitalize.</p>
+        <!-- Example: -->
+        <div class="mb-2">
+          <span class="text-uppercase">uppercase text</span>
+        </div>
+        <div class="mb-2">
+          <span class="text-lowercase">LOWERCASE TEXT</span>
+        </div>
+        <div class="mb-2">
+          <span class="text-capitalize">capitalize each word</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. Forms -->
+    <section class="mb-5">
+      <h2>8. Forms</h2>
+      <!-- Exercise 8.1 -->
+      <div class="mb-3">
+        <h5>Exercise 8.1:</h5>
+        <p>Create a registration form using Bootstrap form components like form-control, form-check, and input-group.</p>
+        <!-- Example: -->
+        <form>
+          <div class="mb-3">
+            <label for="regName" class="form-label">Name</label>
+            <input type="text" class="form-control" id="regName" placeholder="Enter your name">
+          </div>
+          <div class="mb-3">
+            <label for="regEmail" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="regEmail" placeholder="Enter email">
+          </div>
+          <div class="mb-3 input-group">
+            <span class="input-group-text">@</span>
+            <input type="text" class="form-control" placeholder="Username">
+          </div>
+          <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="regCheck">
+            <label class="form-check-label" for="regCheck">Accept terms</label>
+          </div>
+          <button type="submit" class="btn btn-primary">Register</button>
+        </form>
+      </div>
+      <!-- Exercise 8.2 -->
+      <div class="mb-3">
+        <h5>Exercise 8.2:</h5>
+        <p>Style a login form using form-floating.</p>
+        <!-- Example: -->
+        <form class="w-50">
+          <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+            <label for="floatingInput">Email address</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+            <label for="floatingPassword">Password</label>
+          </div>
+          <button class="btn btn-success" type="submit">Login</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- 9. Buttons -->
+    <section class="mb-5">
+      <h2>9. Buttons</h2>
+      <!-- Exercise 9.1 -->
+      <div class="mb-3">
+        <h5>Exercise 9.1:</h5>
+        <p>Create buttons using all contextual classes: btn-primary, btn-secondary, btn-outline-*, etc.</p>
+        <!-- Example: -->
+        <button class="btn btn-primary mb-1">Primary</button>
+        <button class="btn btn-secondary mb-1">Secondary</button>
+        <button class="btn btn-outline-success mb-1">Outline Success</button>
+        <button class="btn btn-outline-danger mb-1">Outline Danger</button>
+      </div>
+      <!-- Exercise 9.2 -->
+      <div class="mb-3">
+        <h5>Exercise 9.2:</h5>
+        <p>Add button groups using btn-group, and create toggle buttons with checkboxes.</p>
+        <!-- Example: -->
+        <div class="btn-group mb-2" role="group" aria-label="Basic example">
+          <button type="button" class="btn btn-info">Left</button>
+          <button type="button" class="btn btn-info">Middle</button>
+          <button type="button" class="btn btn-info">Right</button>
+        </div>
+        <div class="btn-group mb-2" role="group" aria-label="Toggle button group">
+          <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
+          <label class="btn btn-outline-primary" for="btncheck1">Toggle 1</label>
+          <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
+          <label class="btn btn-outline-primary" for="btncheck2">Toggle 2</label>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. Navbars and Navigation -->
+    <section class="mb-5">
+      <h2>10. Navbars and Navigation</h2>
+      <!-- Exercise 10.1 -->
+      <div class="mb-3">
+        <h5>Exercise 10.1:</h5>
+        <p>Create a responsive navbar with logo, navigation links, and a search form.</p>
+        <!-- Example: -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">Logo</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Features</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Pricing</a></li>
+              </ul>
+              <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+              </form>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <!-- Exercise 10.2 -->
+      <div class="mb-3">
+        <h5>Exercise 10.2:</h5>
+        <p>Use nav, nav-tabs, nav-pills for creating tabbed navigation.</p>
+        <!-- Example: -->
+        <ul class="nav nav-tabs mb-2">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Tab 1</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Tab 2</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Tab 3</a>
+          </li>
+        </ul>
+        <ul class="nav nav-pills">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Pill 1</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Pill 2</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 11. Cards and Media Objects -->
+    <section class="mb-5">
+      <h2>11. Cards and Media Objects</h2>
+      <!-- Exercise 11.1 -->
+      <div class="mb-3">
+        <h5>Exercise 11.1:</h5>
+        <p>Create a profile card using card, card-body, card-title, and card-img-top.</p>
+        <!-- Example: -->
+        <div class="card mb-3" style="width: 18rem;">
+          <img src="https://via.placeholder.com/150" class="card-img-top" alt="Profile Image">
+          <div class="card-body">
+            <h5 class="card-title">John Doe</h5>
+            <p class="card-text">Web Developer</p>
+            <a href="#" class="btn btn-primary">Contact</a>
+          </div>
+        </div>
+      </div>
+      <!-- Exercise 11.2 -->
+      <div class="mb-3">
+        <h5>Exercise 11.2:</h5>
+        <p>Design a media object layout using media and align an image to the left of the content.</p>
+        <!-- Example: -->
+        <div class="d-flex align-items-start mb-3">
+          <img src="https://via.placeholder.com/64" class="me-3 rounded" alt="Media Image">
+          <div>
+            <h5>Media heading</h5>
+            <p>This is some content next to the image. You can use flex utilities for media objects in Bootstrap 5.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 12. Spacing Utilities -->
+    <section class="mb-5">
+      <h2>12. Spacing Utilities</h2>
+      <!-- Exercise 12.1 -->
+      <div class="mb-3">
+        <h5>Exercise 12.1:</h5>
+        <p>Apply margin (m-3, mt-4) and padding (p-2, py-5) utilities on layout sections.</p>
+        <!-- Example: -->
+        <div class="bg-light border m-3 p-2 mb-2">Margin 3, Padding 2</div>
+        <div class="bg-light border mt-4 py-5">Margin Top 4, Padding Y 5</div>
+      </div>
+      <!-- Exercise 12.2 -->
+      <div class="mb-3">
+        <h5>Exercise 12.2:</h5>
+        <p>Build a pricing section where spacing improves the layout.</p>
+        <!-- Example: -->
+        <div class="row justify-content-center">
+          <div class="col-md-4">
+            <div class="card mb-4 box-shadow p-4">
+              <div class="card-header text-center">
+                <h4 class="my-0 font-weight-normal">Basic</h4>
+              </div>
+              <div class="card-body">
+                <h1 class="card-title pricing-card-title">$9 <small class="text-muted">/ mo</small></h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>10 users included</li>
+                  <li>2 GB of storage</li>
+                  <li>Email support</li>
+                </ul>
+                <button type="button" class="btn btn-lg btn-block btn-outline-primary">Sign up</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-4 box-shadow p-4">
+              <div class="card-header text-center">
+                <h4 class="my-0 font-weight-normal">Pro</h4>
+              </div>
+              <div class="card-body">
+                <h1 class="card-title pricing-card-title">$29 <small class="text-muted">/ mo</small></h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>20 users included</li>
+                  <li>10 GB of storage</li>
+                  <li>Priority email support</li>
+                </ul>
+                <button type="button" class="btn btn-lg btn-block btn-primary">Get started</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 13. Colors and Backgrounds -->
+    <section class="mb-5">
+      <h2>13. Colors and Backgrounds</h2>
+      <!-- Exercise 13.1 -->
+      <div class="mb-3">
+        <h5>Exercise 13.1:</h5>
+        <p>Create a dashboard page using contextual background classes (bg-primary, bg-warning, etc.) and text colors.</p>
+        <!-- Example: -->
+        <div class="row mb-2">
+          <div class="col-md-4">
+            <div class="p-3 bg-primary text-white">Primary Panel</div>
+          </div>
+          <div class="col-md-4">
+            <div class="p-3 bg-warning text-dark">Warning Panel</div>
+          </div>
+          <div class="col-md-4">
+            <div class="p-3 bg-success text-white">Success Panel</div>
+          </div>
+        </div>
+      </div>
+      <!-- Exercise 13.2 -->
+      <div class="mb-3">
+        <h5>Exercise 13.2:</h5>
+        <p>Use bg-gradient with bg-dark and white text.</p>
+        <!-- Example: -->
+        <div class="p-4 bg-dark bg-gradient text-white text-center mb-2">Gradient Dark Panel</div>
+      </div>
+    </section>
+
+    <!-- 14. Display and Visibility -->
+    <section class="mb-5">
+      <h2>14. Display and Visibility</h2>
+      <!-- Exercise 14.1 -->
+      <div class="mb-3">
+        <h5>Exercise 14.1:</h5>
+        <p>Use d-none, d-md-block, d-lg-flex to hide/show sections based on screen size.</p>
+        <!-- Example: -->
+        <div class="d-none d-md-block bg-info text-white p-2 mb-2">Visible on md and up</div>
+        <div class="d-lg-flex d-none bg-secondary text-white p-2 mb-2">Visible only on lg and up (flex)</div>
+      </div>
+      <!-- Exercise 14.2 -->
+      <div class="mb-3">
+        <h5>Exercise 14.2:</h5>
+        <p>Create a responsive sidebar that only shows on tablets and above.</p>
+        <!-- Example: -->
+        <div class="row">
+          <div class="col-md-3 d-none d-md-block">
+            <div class="bg-light border p-3">Sidebar (md+ only)</div>
+          </div>
+          <div class="col-md-9">
+            <div class="bg-white border p-3">Main Content</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 15. Borders, Shadows, and Rounded Corners -->
+    <section class="mb-5">
+      <h2>15. Borders, Shadows, and Rounded Corners</h2>
+      <!-- Exercise 15.1 -->
+      <div class="mb-3">
+        <h5>Exercise 15.1:</h5>
+        <p>Add border utilities like border, border-primary, border-3, and rounded-circle to an image.</p>
+        <!-- Example: -->
+        <img src="https://via.placeholder.com/100" class="border border-primary border-3 rounded-circle mb-2" alt="Rounded Profile">
+      </div>
+      <!-- Exercise 15.2 -->
+      <div class="mb-3">
+        <h5>Exercise 15.2:</h5>
+        <p>Use shadow, shadow-lg and rounded-pill in a card.</p>
+        <!-- Example: -->
+        <div class="card shadow-lg mb-2" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title rounded-pill bg-primary text-white px-3 py-1 d-inline-block">Rounded Pill Title</h5>
+            <p class="card-text">This card uses a large shadow and a rounded-pill title.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 16. Positioning Utilities -->
+    <section class="mb-5">
+      <h2>16. Positioning Utilities</h2>
+      <!-- Exercise 16.1 -->
+      <div class="mb-3">
+        <h5>Exercise 16.1:</h5>
+        <p>Create a fixed footer using position-fixed bottom-0.</p>
+        <!-- Example: -->
+        <footer class="bg-dark text-white text-center p-2 position-fixed bottom-0 start-0 w-100">
+          Fixed Footer (bottom-0)
+        </footer>
+      </div>
+      <!-- Exercise 16.2 -->
+      <div class="mb-3" style="position:relative; min-height:120px;">
+        <h5>Exercise 16.2:</h5>
+        <p>Use position-relative and position-absolute to overlay a badge over an image.</p>
+        <!-- Example: -->
+        <div class="position-relative d-inline-block">
+          <img src="https://via.placeholder.com/100" class="rounded" alt="Image with badge">
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+            99+
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 17. Icons with Bootstrap Icons -->
+    <section class="mb-5">
+      <h2>17. Icons with Bootstrap Icons</h2>
+      <!-- Exercise 17.1 -->
+      <div class="mb-3">
+        <h5>Exercise 17.1:</h5>
+        <p>Use Bootstrap Icons for adding icons to buttons, navbars, and cards.</p>
+        <!-- Example: -->
+        <!-- Bootstrap Icons CDN -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+        <button class="btn btn-primary mb-1"><i class="bi bi-house"></i> Home</button>
+        <button class="btn btn-success mb-1"><i class="bi bi-check-circle"></i> Success</button>
+        <nav class="navbar navbar-light bg-light mb-2">
+          <a class="navbar-brand" href="#">
+            <i class="bi bi-bootstrap"></i> Brand
+          </a>
+        </nav>
+        <div class="card" style="width: 10rem;">
+          <div class="card-body text-center">
+            <i class="bi bi-person-circle" style="font-size:2rem;"></i>
+            <h5 class="card-title">Profile</h5>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 
