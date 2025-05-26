@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Exercises</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    section {
+      margin-bottom: 30px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #eee;
+    }
+    h2 {
+      color: #333;
+    }
+    code {
+        background-color: #e9ecef;
+        padding: 2px 5px;
+        border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>JavaScript Exercises</h1>
+    <h2>Project Theme: "Local Community Event Portal"</h2>
+    <p>Users can view upcoming events, register, filter events by category or location, and interact dynamically with the portal.</p>
+
+    <!-- 1. JavaScript Basics & Setup -->
+    <section>
+      <h2>1. JavaScript Basics & Setup</h2>
+      <p><strong>Scenario:</strong> Set up your community portal to use JavaScript.</p>
+      <p><strong>Objective:</strong> Configure environment and test basic script functionality.</p>
+      <ul>
+        <li>Use <code>&lt;script src="main.js"&gt;&lt;/script&gt;</code> in HTML (Done at the end of body)</li>
+        <li>Log "Welcome to the Community Portal" using <code>console.log()</code></li>
+        <li>Use an <code>alert</code> to notify when the page is fully loaded</li>
+      </ul>
+      <p>Check the browser's console and look for an alert when the page loads.</p>
+    </section>
+
+    <!-- 2. Syntax, Data Types, and Operators -->
+    <section>
+      <h2>2. Syntax, Data Types, and Operators</h2>
+      <p><strong>Scenario:</strong> Store event details like name, date, and available seats.</p>
+      <p><strong>Objective:</strong> Use proper data types and operations.</p>
+      <ul>
+        <li>Use <code>const</code> for event name and date, <code>let</code> for seats</li>
+        <li>Concatenate event info using template literals</li>
+        <li>Use <code>++</code> or <code>--</code> to manage seat count on registration</li>
+      </ul>
+      <p>Implement these concepts in <code>main.js</code>.</p>
+    </section>
+
+    <!-- 3. Conditionals, Loops, and Error Handling -->
+    <section>
+      <h2>3. Conditionals, Loops, and Error Handling</h2>
+      <p><strong>Scenario:</strong> Only show valid events and limit registrations.</p>
+      <p><strong>Objective:</strong> Apply conditions and handle invalid data.</p>
+      <p><strong>User Story:</strong> As a user, I want only upcoming events with seats to be displayed.</p>
+      <ul>
+        <li>Use <code>if-else</code> to hide past or full events</li>
+        <li>Loop through the event list and display using <code>forEach()</code></li>
+        <li>Wrap registration logic in <code>try-catch</code> to handle errors</li>
+      </ul>
+      <p>Write JavaScript in <code>main.js</code> to filter and display events, and handle potential registration errors.</p>
+      <div id="eventList"></div>
+    </section>
+
+    <!-- 4. Functions, Scope, Closures, Higher-Order Functions -->
+    <section>
+      <h2>4. Functions, Scope, Closures, Higher-Order Functions</h2>
+      <p><strong>Scenario:</strong> Create reusable functions for event operations.</p>
+      <p><strong>Objective:</strong> Encapsulate logic and use closures.</p>
+      <ul>
+        <li>Create <code>addEvent()</code>, <code>registerUser()</code>, <code>filterEventsByCategory()</code> functions</li>
+        <li>Use closure to track total registrations for a category</li>
+        <li>Pass callbacks to filter functions for dynamic search</li>
+      </ul>
+      <p>Define and implement these functions in <code>main.js</code>.</p>
+    </section>
+
+    <!-- 5. Objects and Prototypes -->
+    <section>
+      <h2>5. Objects and Prototypes</h2>
+      <p><strong>Scenario:</strong> Each event is an object with properties and methods.</p>
+      <p><strong>Objective:</strong> Model real-world entities using objects.</p>
+      <ul>
+        <li>Define Event constructor or class</li>
+        <li>Add <code>checkAvailability()</code> to prototype</li>
+        <li>List object keys and values using <code>Object.entries()</code></li>
+      </ul>
+      <p>Create event objects and use their methods in <code>main.js</code>.</p>
+    </section>
+
+    <!-- 6. Arrays and Methods -->
+    <section>
+      <h2>6. Arrays and Methods</h2>
+      <p><strong>Scenario:</strong> Manage an array of all community events.</p>
+      <p><strong>Objective:</strong> Use array methods for CRUD operations.</p>
+      <ul>
+        <li>Add new events using <code>.push()</code></li>
+        <li>Use <code>.filter()</code> to show only music events</li>
+        <li>Use <code>.map()</code> to format display cards (e.g., "Workshop on Baking")</li>
+      </ul>
+      <p>Manipulate an array of events using these methods in <code>main.js</code>.</p>
+    </section>
+
+    <!-- 7. DOM Manipulation -->
+    <section>
+      <h2>7. DOM Manipulation</h2>
+      <p><strong>Scenario:</strong> Display all events dynamically on the webpage.</p>
+      <p><strong>Objective:</strong> Render events using JS.</p>
+      <ul>
+        <li>Access DOM elements using <code>querySelector()</code></li>
+        <li>Create and append event cards using <code>createElement()</code></li>
+        <li>Update UI when user registers or cancels</li>
+      </ul>
+      <p>Use JavaScript in <code>main.js</code> to create and update the HTML content based on event data.</p>
+      <div id="eventDisplayArea"></div>
+    </section>
+
+    <!-- 8. Event Handling -->
+    <section>
+      <h2>8. Event Handling</h2>
+      <p><strong>Scenario:</strong> Add interactive elements like buttons and filters.</p>
+      <p><strong>Objective:</strong> Respond to user actions.</p>
+      <ul>
+        <li>Use <code>onclick</code> for "Register" buttons</li>
+        <li>Use <code>onchange</code> to filter events by category</li>
+        <li>Use <code>onkeydown</code> to allow quick search by name</li>
+      </ul>
+      <p>Add event listeners to HTML elements and define corresponding functions in <code>main.js</code>.</p>
+      <button id="registerBtn">Register</button>
+      <select id="categoryFilter">
+        <option value="all">All Categories</option>
+        <option value="music">Music</option>
+        <option value="sports">Sports</option>
+      </select>
+      <input type="text" id="searchEvent" placeholder="Search events...">
+    </section>
+
+    <!-- 9. Async JS, Promises, Async/Await -->
+    <section>
+      <h2>9. Async JS, Promises, Async/Await</h2>
+      <p><strong>Scenario:</strong> Fetch event data from a mock API.</p>
+      <p><strong>Objective:</strong> Use asynchronous logic for remote operations.</p>
+      <ul>
+        <li>Fetch events from a mock JSON endpoint</li>
+        <li>Use <code>.then()</code> and <code>.catch()</code> to handle results</li>
+        <li>Rewrite using <code>async/await</code> and show loading spinner</li>
+      </ul>
+      <p>Implement asynchronous data fetching in <code>main.js</code>.</p>
+      <button id="fetchEventsBtn">Fetch Events</button>
+      <div id="loadingSpinner" style="display:none;">Loading...</div>
+      <div id="apiData"></div>
+    </section>
+
+    <!-- 10. Modern JavaScript Features -->
+    <section>
+      <h2>10. Modern JavaScript Features</h2>
+      <p><strong>Scenario:</strong> Refactor code to be concise and maintainable.</p>
+      <p><strong>Objective:</strong> Use ES6+ features.</p>
+      <ul>
+        <li>Use <code>let</code>, <code>const</code>, default parameters in functions</li>
+        <li>Use destructuring to extract event details</li>
+        <li>Use spread operator to clone event list before filtering</li>
+      </ul>
+      <p>Refactor existing JavaScript code in <code>main.js</code> using these modern features.</p>
+    </section>
+
+    <!-- 11. Working with Forms -->
+    <section>
+      <h2>11. Working with Forms</h2>
+      <p><strong>Scenario:</strong> Create a registration form for event sign-up.</p>
+      <p><strong>Objective:</strong> Connect form inputs to JavaScript.</p>
+      <ul>
+        <li>Capture name, email, and selected event using <code>form.elements</code></li>
+        <li>Prevent default form behavior using <code>event.preventDefault()</code></li>
+        <li>Validate inputs and show errors inline</li>
+      </ul>
+      <p>Connect the form from Exercise 5 to JavaScript for handling and validation.</p>
+      <!-- Referencing the form in Exercise 5 -->
+    </section>
+
+    <!-- 12. AJAX & Fetch API -->
+    <section>
+      <h2>12. AJAX & Fetch API</h2>
+      <p><strong>Scenario:</strong> Send user registration to the server.</p>
+      <p><strong>Objective:</strong> Simulate backend communication.</p>
+      <ul>
+        <li>Use <code>fetch()</code> to POST user data to a mock API</li>
+        <li>Show success/failure message after submission</li>
+        <li>Use <code>setTimeout()</code> to simulate a delayed response</li>
+      </ul>
+      <p>Implement form submission using Fetch API in <code>main.js</code>.</p>
+    </section>
+
+    <!-- 13. Debugging and Testing -->
+    <section>
+      <h2>13. Debugging and Testing</h2>
+      <p><strong>Scenario:</strong> Registration is failing silently. You need to debug.</p>
+      <p><strong>Objective:</strong> Use browser tools to inspect and fix issues.</p>
+      <ul>
+        <li>Use Chrome Dev Tools Console and Network tab</li>
+        <li>Add breakpoints and inspect variables</li>
+        <li>Log form submission steps and check fetch request payload</li>
+      </ul>
+      <p>Use browser developer tools to debug the registration process implemented in previous exercises.</p>
+    </section>
+
+    <!-- 14. jQuery and JS Frameworks -->
+    <section>
+      <h2>14. jQuery and JS Frameworks</h2>
+      <p><strong>Scenario:</strong> Use jQuery to simplify DOM tasks.</p>
+      <p><strong>Objective:</strong> Understand and use jQuery.</p>
+      <ul>
+        <li>Use <code>$(&'#registerBtn').click(...)</code> to handle click events</li>
+        <li>Use <code>fadeIn()</code> and <code>fadeOut()</code> for event cards</li>
+        <li>Mention one benefit of moving to frameworks like React or Vue</li>
+      </ul>
+      <p>If you choose to, integrate jQuery into this page and refactor some DOM manipulation or event handling tasks.</p>
+      <!-- Link to jQuery CDN if needed -->
+      <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+    </section>
+
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html> 

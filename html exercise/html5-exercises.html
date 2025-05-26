@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Local Community Event Portal</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f4f6f8;
+      margin: 0;
+      color: #222;
+    }
+    header {
+      background: #1976d2;
+      color: #fff;
+      padding: 2rem 0 1rem 0;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0 0 0.5rem 0;
+      font-size: 2.5rem;
+      font-weight: 700;
+    }
+    header p {
+      margin: 0 auto;
+      font-size: 1.3rem;
+      max-width: 700px;
+      color: #e3f2fd;
+    }
+    nav {
+      background: #1565c0;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 0.75rem 0;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1.1rem;
+      transition: color 0.2s;
+    }
+    nav a:hover {
+      color: #ffeb3b;
+    }
+    .container {
+      max-width: 900px;
+      margin: 2.5rem auto;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+      padding: 2.5rem 2rem 2rem 2rem;
+    }
+    .banner {
+      background: #e3f2fd;
+      color: #1565c0;
+      padding: 1.2rem;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+      text-align: center;
+      font-size: 1.25rem;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+    section {
+      margin-bottom: 2.5rem;
+    }
+    h2 {
+      color: #1976d2;
+      margin-top: 0;
+      font-size: 2rem;
+    }
+    @media (max-width: 600px) {
+      .container { padding: 1rem; }
+      header h1 { font-size: 1.5rem; }
+      h2 { font-size: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Local Community Event Portal</h1>
+    <p>A lightweight, browser-based portal to help residents register for events, check locations, and access basic services.</p>
+  </header>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#events">Events</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <main class="container">
+    <div class="banner" id="welcome-banner">
+      Welcome back, <span class="username">Alex</span>! Check out the latest community happenings below.
+    </div>
+    <section id="home">
+      <h2>Welcome to Your Community Portal</h2>
+      <p>Stay up to date with the latest events, register for activities, and connect with your neighbors. This portal is your one-stop destination for all local happenings and essential city services.</p>
+    </section>
+    <section id="events">
+      <h2>Upcoming Events</h2>
+      <ul>
+        <li><strong>Spring Festival</strong> – April 20, 2024 at Central Park</li>
+        <li><strong>Farmers Market</strong> – Every Saturday, 8am–1pm at Main Square</li>
+        <li><strong>Community Cleanup</strong> – May 5, 2024, meet at City Hall</li>
+      </ul>
+    </section>
+    <section id="contact">
+      <h2>Contact the City Council</h2>
+      <p>Have questions or need assistance? <br>Email us at <a href="mailto:info@cityportal.com">info@cityportal.com</a> or call (555) 123-4567.</p>
+    </section>
+  </main>
+  <main class="container">
+    <!-- 4. Image Gallery for Community Events -->
+    <section>
+      <h2>4. Image Gallery for Community Events</h2>
+      <p><strong>Scenario:</strong> Show images from past events in a table layout.</p>
+      <p><strong>Objective:</strong> Work with <code>&lt;img&gt;</code>, tables, and formatting tags.</p>
+      <!-- Example: Image Gallery Table -->
+      <table>
+        <thead>
+          <tr>
+            <th>Event Images</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><img src="https://via.placeholder.com/150" alt="Event Image 1" class="img-border" style="border: 1px solid #ccc; padding: 5px; margin: 5px;"></td>
+            <td>Description for image 1</td>
+          </tr>
+          <tr>
+            <td><img src="https://via.placeholder.com/150" alt="Event Image 2" class="img-border" style="border: 1px solid #ccc; padding: 5px; margin: 5px;"></td>
+            <td>Description for image 2</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 5. Event Registration Form -->
+    <section>
+      <h2>5. Event Registration Form</h2>
+      <p><strong>Scenario:</strong> Residents need to register for events.</p>
+      <p><strong>Objective:</strong> Practice input types, validation, placeholder, autofocus, and output</p>
+      <!-- Example: Registration Form -->
+      <form>
+        <div style="margin-bottom: 1rem;">
+          <label for="name">Name:</label><br>
+          <input type="text" id="name" name="name" placeholder="Your Name" required autofocus>
+        </div>
+        <div style="margin-bottom: 1rem;">
+          <label for="email">Email:</label><br>
+          <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+        </div>
+        <div style="margin-bottom: 1rem;">
+          <label for="date">Event Date:</label><br>
+          <input type="date" id="date" name="date" required>
+        </div>
+        <div style="margin-bottom: 1rem;">
+          <label for="eventType">Event Type:</label><br>
+          <select id="eventType" name="eventType">
+            <option value="">--Select Event Type--</option>
+            <option value="festival">Festival</option>
+            <option value="market">Market</option>
+            <option value="cleanup">Cleanup</option>
+          </select>
+        </div>
+        <div style="margin-bottom: 1rem;">
+          <label for="message">Message:</label><br>
+          <textarea id="message" name="message" rows="4" cols="50"></textarea>
+        </div>
+        <button type="submit">Register</button>
+      </form>
+      <div style="margin-top: 1rem;">
+        Registration Confirmation: <output name="result" for="name email date eventType message"></output>
+      </div>
+    </section>
+
+    <!-- 6. Event Feedback with Events Handling -->
+    <section>
+      <h2>6. Event Feedback with Events Handling</h2>
+      <p><strong>Scenario:</strong> Collect real-time feedback and interactions from the user.</p>
+      <p><strong>Objective:</strong> Handle blur, change, click, double-click, and keyboard events.</p>
+      <!-- Example: Feedback Form Elements -->
+      <div style="margin-bottom: 1rem;">
+        <label for="phone">Phone Number (onblur validation):</label><br>
+        <input type="text" id="phone" name="phone">
+        <!-- Add onblur event handler with JavaScript -->
+      </div>
+      <div style="margin-bottom: 1rem;">
+        <label for="feeSelect">Select Event (onchange fee display):</label><br>
+        <select id="feeSelect" name="feeSelect">
+          <option value="">--Select Event--</option>
+          <option value="festival">Festival ($10)</option>
+          <option value="market">Market (Free)</option>
+          <option value="cleanup">Cleanup (Free)</option>
+        </select>
+        <!-- Add onchange event handler with JavaScript -->
+        <p>Event Fee: <span id="eventFee"></span></p>
+      </div>
+      <div style="margin-bottom: 1rem;">
+        <button id="confirmBtn">Click for Confirmation</button>
+        <!-- Add onclick event handler with JavaScript -->
+      </div>
+      <div style="margin-bottom: 1rem;">
+        <img src="https://via.placeholder.com/100" alt="Click to enlarge" id="enlargeImg" style="cursor: pointer;">
+        <!-- Add ondblclick event handler with JavaScript -->
+      </div>
+      <div style="margin-bottom: 1rem;">
+        <label for="feedbackTextarea">Feedback (keypress count):</label><br>
+        <textarea id="feedbackTextarea" name="feedbackTextarea" rows="4" cols="50"></textarea>
+        <!-- Add keyup/keydown event handler with JavaScript -->
+        <p>Characters remaining: <span id="charCount"></span></p>
+      </div>
+      <!-- JavaScript for event handling would be added here -->
+      <script>
+        // Example JavaScript placeholders
+        document.getElementById('phone').onblur = function() { alert('Phone field blurred!'); };
+        document.getElementById('feeSelect').onchange = function() {
+          const feeSpan = document.getElementById('eventFee');
+          switch(this.value) {
+            case 'festival': feeSpan.textContent = '$10'; break;
+            case 'market': feeSpan.textContent = 'Free'; break;
+            case 'cleanup': feeSpan.textContent = 'Free'; break;
+            default: feeSpan.textContent = '';
+          }
+        };
+        document.getElementById('confirmBtn').onclick = function() { alert('Button clicked!'); };
+        document.getElementById('enlargeImg').ondblclick = function() { alert('Image double-clicked!'); };
+        document.getElementById('feedbackTextarea').onkeyup = function() {
+          const charCountSpan = document.getElementById('charCount');
+          charCountSpan.textContent = 200 - this.value.length; // Example max length
+        };
+      </script>
+    </section>
+
+    <!-- 7. Saving User Preferences -->
+    <section>
+      <h2>7. Saving User Preferences</h2>
+      <p><strong>Scenario:</strong> Store preferred event type for returning users.</p>
+      <p><strong>Objective:</strong> Work with <code>localStorage</code>, <code>sessionStorage</code>, and deletion</p>
+      <!-- Example: Preference Elements -->
+      <div style="margin-bottom: 1rem;">
+        <label for="prefEventType">Preferred Event Type:</label><br>
+        <select id="prefEventType" name="prefEventType">
+          <option value="">--Select Event Type--</option>
+          <option value="festival">Festival</option>
+          <option value="market">Market</option>
+          <option value="cleanup">Cleanup</option>
+        </select>
+        <button id="savePrefBtn">Save Preference</button>
+        <button id="clearPrefBtn">Clear Preferences</button>
+      </div>
+      <!-- JavaScript for saving/loading preferences would be added here -->
+      <script>
+        // Example JavaScript placeholders for preferences
+        const prefSelect = document.getElementById('prefEventType');
+        const saveBtn = document.getElementById('savePrefBtn');
+        const clearBtn = document.getElementById('clearPrefBtn');
+
+        // Load preference on page load
+        window.onload = function() {
+          const savedPref = localStorage.getItem('preferredEventType');
+          if (savedPref) {
+            prefSelect.value = savedPref;
+          }
+        };
+
+        // Save preference
+        saveBtn.onclick = function() {
+          localStorage.setItem('preferredEventType', prefSelect.value);
+          alert('Preference saved!');
+        };
+
+        // Clear preferences
+        clearBtn.onclick = function() {
+          localStorage.removeItem('preferredEventType');
+          sessionStorage.clear(); // Also clear session storage as per exercise
+          alert('Preferences cleared!');
+          prefSelect.value = ''; // Reset dropdown
+        };
+      </script>
+    </section>
+
+    <!-- 8. Geolocation for Event Mapping -->
+    <section>
+      <h2>8. Geolocation for Event Mapping</h2>
+      <p><strong>Scenario:</strong> Locate the nearest event to the user.</p>
+      <p><strong>Objective:</strong> Practice <code>geolocation.getCurrentPosition</code>, error handling, and options</p>
+      <!-- Example: Geolocation Button and Output -->
+      <button id="findNearbyBtn">Find Nearby Events</button>
+      <p id="locationOutput"></p>
+      <!-- JavaScript for geolocation would be added here -->
+      <script>
+        // Example JavaScript placeholder for geolocation
+        document.getElementById('findNearbyBtn').onclick = function() {
+          const output = document.getElementById('locationOutput');
+          if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+              output.textContent = 'Latitude: ' + position.coords.latitude + ', Longitude: ' + position.coords.longitude;
+            }, function(error) {
+              output.textContent = 'Error getting location: ' + error.message;
+            }, { enableHighAccuracy: true, timeout: 10000, maximumAge: 0 });
+          } else {
+            output.textContent = 'Geolocation is not supported by this browser.';
+          }
+        };
+      </script>
+    </section>
+
+    <!-- 9. Drag and Drop Events -->
+    <section>
+      <h2>9. Drag and Drop Events</h2>
+      <p><strong>Scenario:</strong> Allow users to rearrange event items.</p>
+      <p><strong>Objective:</strong> Implement dragstart, dragover, and drop events.</p>
+      <!-- Example: Drag and Drop Elements -->
+      <div id="dragContainer" style="border: 1px solid #ccc; padding: 10px;">
+        <div class="draggable" draggable="true" style="border: 1px solid #1976d2; padding: 8px; margin-bottom: 5px; background: #e3f2fd; cursor: grab;">Drag Item 1</div>
+        <div class="draggable" draggable="true" style="border: 1px solid #1976d2; padding: 8px; margin-bottom: 5px; background: #e3f2fd; cursor: grab;">Drag Item 2</div>
+      </div>
+      <div id="dropTarget" style="border: 2px dashed #ccc; padding: 20px; margin-top: 10px; text-align: center;">
+        Drop items here
+      </div>
+      <!-- JavaScript for drag and drop would be added here -->
+       <script>
+         // Example JavaScript placeholders for drag and drop
+         const draggables = document.querySelectorAll('.draggable');
+         const dropTarget = document.getElementById('dropTarget');
+
+         draggables.forEach(draggable => {
+           draggable.addEventListener('dragstart', (e) => {
+             e.dataTransfer.setData('text/plain', e.target.textContent);
+           });
+         });
+
+         dropTarget.addEventListener('dragover', (e) => {
+           e.preventDefault(); // Necessary to allow dropping
+         });
+
+         dropTarget.addEventListener('drop', (e) => {
+           e.preventDefault();
+           const data = e.dataTransfer.getData('text/plain');
+           dropTarget.textContent = 'Dropped: ' + data;
+         });
+       </script>
+    </section>
+
+    <!-- 10. Debugging with Chrome DevTools -->
+    <section>
+      <h2>10. Debugging with Chrome DevTools</h2>
+      <p><strong>Scenario:</strong> A few users report layout issues and script errors.</p>
+      <p><strong>Objective:</strong> Use Chrome DevTools and VS Code features to debug.</p>
+      <!-- Example: Elements for Debugging -->
+      <div id="debugDiv" style="background: lightgrey; padding: 10px; margin-bottom: 1rem;">
+        Inspect this div in Elements tab.
+      </div>
+      <button id="consoleLogBtn">Log to Console</button>
+      <!-- Add breakpoint in the script below -->
+      <script>
+        // Example JavaScript for debugging
+        console.log('This is a console log message.');
+
+        document.getElementById('consoleLogBtn').onclick = function() {
+          let debugVar = "This is a variable to inspect";
+          console.log('Button clicked!', debugVar); // Set breakpoint here
+        };
+      </script>
+      <p>Use the 'Inspect Element' in Chrome DevTools to modify the style of the grey div above.</p>
+      <p>Open the Console tab to see the log messages.</p>
+      <p>In the Sources tab, find this script, set a breakpoint on the line `console.log('Button clicked!', debugVar);`, then click the button and inspect `debugVar`.</p>
+    </section>
+  </main>
+</body>
+</html> 
