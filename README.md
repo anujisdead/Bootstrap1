@@ -1,6 +1,6 @@
-# Web Development Exercises
+# Web Development and Java Exercises
 
-This repository contains a collection of web development exercises covering HTML, CSS, JavaScript, and Bootstrap. Each folder contains specific exercises and examples for learning web development concepts.
+This repository contains a collection of exercises covering HTML, CSS, JavaScript, Bootstrap, and Core Java. Each folder contains specific exercises and examples for learning web development and Java programming concepts.
 
 ## Project Structure
 
@@ -14,8 +14,26 @@ This repository contains a collection of web development exercises covering HTML
 ├── javascript exercise/
 │   ├── js-exercises.html      # JavaScript programming exercises
 │   └── main.js               # JavaScript implementation
-└── bootstrap exercise/
-    └── index.html            # Bootstrap framework exercises
+└── java-exercise/
+    ├── HelloWorld.java
+    ├── SimpleCalculator.java
+    ├── EvenOddChecker.java
+    ├── LeapYearChecker.java
+    ├── MultiplicationTable.java
+    ├── DataTypeDemonstration.java
+    ├── TypeCastingExample.java
+    ├── OperatorPrecedence.java
+    ├── GradeCalculator.java
+    ├── NumberGuessingGame.java
+    ├── FactorialCalculator.java
+    ├── MethodOverloading.java
+    ├── RecursiveFibonacci.java
+    ├── ArraySumAndAverage.java
+    ├── StringReversal.java
+    ├── PalindromeChecker.java
+    ├── ClassAndObjectCreation.java
+    ├── InheritanceExample.java
+    └── InterfaceImplementation.java # Core Java programming exercises
 ```
 
 ## How to Run Each Exercise
@@ -59,11 +77,30 @@ This repository contains a collection of web development exercises covering HTML
    - Using browser dev tools device emulation
 5. Run command: `open "bootstrap exercise/index.html"`
 
+### Java Exercises
+1. Ensure you have the Java Development Kit (JDK) installed.
+2. Open your terminal or command prompt.
+3. Navigate to the `java-exercise` directory using the `cd` command:
+   ```bash
+   cd java-exercise
+   ```
+4. Compile the Java file using the `javac` command. Replace `YourExercise.java` with the name of the file you want to run (e.g., `HelloWorld.java`):
+   ```bash
+   javac YourExercise.java
+   ```
+   This will create a `.class` file (e.g., `YourExercise.class`).
+5. Run the compiled Java code using the `java` command. Replace `YourExercise` with the name of the compiled class (without the `.class` extension):
+   ```bash
+   java YourExercise
+   ```
+6. Interact with the program in the terminal as required by the exercise (e.g., provide input for the calculator).
+
 ## Development Tools
 
 ### Recommended Tools
-- Visual Studio Code or any code editor
-- Google Chrome (for JavaScript debugging)
+- Visual Studio Code or any code editor (with Java extensions)
+- Google Chrome (for web development debugging)
+- JDK (Java Development Kit) for Java exercises
 - Git (for version control)
 
 ### Browser Developer Tools
@@ -95,18 +132,25 @@ This repository contains a collection of web development exercises covering HTML
    - Customize when necessary
    - Follow grid system guidelines
 
+5. **Java**
+   - Write clean and readable code
+   - Follow Java coding conventions
+   - Use meaningful variable names
+   - Add comments to explain complex logic
+   - Handle potential errors (e.g., user input)
+
 ## Getting Started
 
 1. Clone this repository
 2. Navigate to the exercise folder you want to work on
 3. Open the files in your code editor
-4. Follow the instructions in each exercise
-5. Use the browser to view and test your work
+4. Follow the instructions in each exercise file
+5. Use the browser (for web) or terminal (for Java) to view and test your work
 
 ## Notes
 
-- Each exercise folder contains its own specific instructions
-- Use browser developer tools for debugging
-- Keep your code organized and well-commented
-- Test your code across different browsers
-- Check console for any errors or warnings
+- Each exercise folder contains its own specific instructions within the files or a dedicated README.
+- Use browser developer tools for web debugging.
+- Use terminal for compiling and running Java code.
+- Keep your code organized and well-commented.
+- Test your code thoroughly.

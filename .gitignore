@@ -1,0 +1,3 @@
+// Add Java build artifacts to ignore
+*.class
+// Optionally add other build tool outputs like target/ or build/ 
