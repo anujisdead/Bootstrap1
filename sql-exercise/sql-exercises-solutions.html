@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANSI SQL Using MySQL Exercises - Solutions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        table {
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <h1>ANSI SQL Using MySQL Exercises - Solutions</h1>
+
+    <h2>Database Schema</h2>
+
+    <h3>1. Users Table</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Column Name</th>
+                <th>Data Type</th>
+                <th>Constraints</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>user_id</td>
+                <td>INT</td>
+                <td>PRIMARY KEY, AUTO_INCREMENT</td>
+                <td>Unique user identifier</td>
+            </tr>
+            <tr>
+                <td>full_name</td>
+                <td>VARCHAR(100)</td>
+                <td>NOT NULL</td>
+                <td>User's full name</td>
+            </tr>
+            <tr>
+                <td>email</td>
+                <td>VARCHAR(100)</td>
+                <td>UNIQUE, NOT NULL</td>
+                <td>User's email</td>
+            </tr>
+            <tr>
+                <td>city</td>
+                <td>VARCHAR(100)</td>
+                <td>NOT NULL</td>
+                <td>City of the user</td>
+            </tr>
+            <tr>
+                <td>registration_date</td>
+                <td>DATE</td>
+                <td>NOT NULL</td>
+                <td>Date when user registered</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>2. Events Table</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Column Name</th>
+                <th>Data Type</th>
+                <th>Constraints</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>event_id</td>
+                <td>INT</td>
+                <td>PRIMARY KEY, AUTO_INCREMENT</td>
+                <td>Unique event identifier</td>
+            </tr>
+            <tr>
+                <td>title</td>
+                <td>VARCHAR(200)</td>
+                <td>NOT NULL</td>
+                <td>Title of the event</td>
+            </tr>
+            <tr>
+                <td>description</td>
+                <td>TEXT</td>
+                <td></td>
+                <td>Event description</td>
+            </tr>
+            <tr>
+                <td>city</td>
+                <td>VARCHAR(100)</td>
+                <td>NOT NULL</td>
+                <td>City where event is held</td>
+            </tr>
+            <tr>
+                <td>start_date</td>
+                <td>DATETIME</td>
+                <td>NOT NULL</td>
+                <td>Start date and time of event</td>
+            </tr>
+            <tr>
+                <td>end_date</td>
+                <td>DATETIME</td>
+                <td>NOT NULL</td>
+                <td>End date and time of event</td>
+            </tr>
+            <tr>
+                <td>status</td>
+                <td>ENUM ('upcoming','completed','cancelled')</td>
+                <td></td>
+                <td>Current status of the event</td>
+            </tr>
+            <tr>
+                <td>organizer_id</td>
+                <td>INT</td>
+                <td>FOREIGN KEY -&gt; Users(user_id)</td>
+                <td>User who organized the event</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>3. Sessions Table</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Column Name</th>
+                <th>Data Type</th>
+                <th>Constraints</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>session_id</td>
+                <td>INT</td>
+                <td>PRIMARY KEY, AUTO_INCREMENT</td>
+                <td>Unique session identifier</td>
+            </tr>
+            <tr>
+                <td>event_id</td>
+                <td>INT</td>
+                <td>FOREIGN KEY -&gt; Events(event_id)</td>
+                <td>Associated event</td>
+            </tr>
+            <tr>
+                <td>title</td>
+                <td>VARCHAR(200)</td>
+                <td>NOT NULL</td>
+                <td>Title of the session</td>
+            </tr>
+            <tr>
+                <td>speaker_name</td>
+                <td>VARCHAR(100)</td>
+                <td>NOT NULL</td>
+                <td>Name of speaker</td>
+            </tr>
+            <tr>
+                <td>start_time</td>
+                <td>DATETIME</td>
+                <td>NOT NULL</td>
+                <td>Session start time</td>
+            </tr>
+            <tr>
+                <td>end_time</td>
+                <td>DATETIME</td>
+                <td>NOT NULL</td>
+                <td>Session end time</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>4. Registrations Table</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Column Name</th>
+                <th>Data Type</th>
+                <th>Constraints</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>registration_id</td>
+                <td>INT</td>
+                <td>PRIMARY KEY, AUTO_INCREMENT</td>
+                <td>Unique registration ID</td>
+            </tr>
+            <tr>
+                <td>user_id</td>
+                <td>INT</td>
+                <td>FOREIGN KEY -&gt; Users(user_id)</td>
+                <td>User who registered</td>
+            </tr>
+            <tr>
+                <td>event_id</td>
+                <td>INT</td>
+                <td>FOREIGN KEY -&gt; Events(event_id)</td>
+                <td>Registered event</td>
+            </tr>
+            <tr>
+                <td>registration_date</td>
+                <td>DATE</td>
+                <td>NOT NULL</td>
+                <td>Date of registration</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>5. Feedback Table</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Column Name</th>
+                <th>Data Type</th>
+                <th>Constraints</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>feedback_id</td>
+                <td>INT</td>
+                <td>PRIMARY KEY, AUTO_INCREMENT</td>
+                <td>Unique feedback ID</td>
+            </tr>
+            <tr>
+                <td>user_id</td>
+                <td>INT</td>
+                <td>FOREIGN KEY -&gt; Users(user_id)</td>
+                <td>User who gave feedback</td>
+            </tr>
+            <tr>
+                <td>event_id</td>
+                <td>INT</td>
+                <td>FOREIGN KEY -&gt; Events(event_id)</td>
+                <td>Event for which feedback is given</td>
+            </tr>
+            <tr>
+                <td>rating</td>
+                <td>INT</td>
+                <td>CHECK (rating BETWEEN 1 AND 5)</td>
+                <td>Rating out of 5</td>
+            </tr>
+            <tr>
+                <td>comments</td>
+                <td>TEXT</td>
+                <td></td>
+                <td>Optional comments</td>
+            </tr>
+            <tr>
+                <td>feedback_date</td>
+                <td>DATE</td>
+                <td>NOT NULL</td>
+                <td>Date of feedback</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>6. Resources Table</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Column Name</th>
+                <th>Data Type</th>
+                <th>Constraints</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>resource_id</td>
+                <td>INT</td>
+                <td>PRIMARY KEY, AUTO_INCREMENT</td>
+                <td>Unique resource ID</td>
+            </tr>
+            <tr>
+                <td>event_id</td>
+                <td>INT</td>
+                <td>FOREIGN KEY -&gt; Events(event_id)</td>
+                <td>Associated event</td>
+            </tr>
+            <tr>
+                <td>resource_type</td>
+                <td>ENUM ('pdf','image','link')</td>
+                <td>NOT NULL</td>
+                <td>Type of resource</td>
+            </tr>
+            <tr>
+                <td>resource_url</td>
+                <td>VARCHAR(255)</td>
+                <td>NOT NULL</td>
+                <td>Path or link to resource</td>
+            </tr>
+            <tr>
+                <td>uploaded_at</td>
+                <td>DATETIME</td>
+                <td>NOT NULL</td>
+                <td>Upload timestamp</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Exercises and Solutions</h2>
+
+    <section>
+        <h3>1. User Upcoming Events</h3>
+        <p>Show a list of all upcoming events a user is registered for in their city, sorted by date.</p>
+        <pre><Code>SELECT DISTINCT E.title, E.start_date
+FROM Users U
+JOIN Registrations R ON U.user_id = R.user_id
+JOIN Events E ON R.event_id = E.event_id
+WHERE U.user_id = [user_id] AND E.city = U.city AND E.status = 'upcoming'
+ORDER BY E.start_date;</Code></pre>
+    </section>
+
+    <section>
+        <h3>2. Top Rated Events</h3>
+        <p>Identify events with the highest average rating, considering only those that have received at least 10 feedback submissions.</p>
+        <pre><Code>SELECT E.title, AVG(F.rating) AS average_rating
+FROM Events E
+JOIN Feedback F ON E.event_id = F.event_id
+GROUP BY E.event_id, E.title
+HAVING COUNT(F.feedback_id) >= 10
+ORDER BY average_rating DESC;</Code></pre>
+    </section>
+
+    <section>
+        <h3>3. Inactive Users</h3>
+        <p>Retrieve users who have not registered for any events in the last 90 days.</p>
+        <pre><Code>SELECT U.full_name, U.email
+FROM Users U
+LEFT JOIN Registrations R ON U.user_id = R.user_id AND R.registration_date >= DATE_SUB(CURDATE(), INTERVAL 90 DAY)
+WHERE R.registration_id IS NULL;</Code></pre>
+    </section>
+
+    <section>
+        <h3>4. Peak Session Hours</h3>
+        <p>Count how many sessions are scheduled between 10 AM to 12 PM for each event.</p>
+        <pre><Code>SELECT E.title, COUNT(S.session_id) AS peak_session_count
+FROM Events E
+JOIN Sessions S ON E.event_id = S.event_id
+WHERE TIME(S.start_time) >= '10:00:00' AND TIME(S.start_time) < '12:00:00'
+GROUP BY E.event_id, E.title;</Code></pre>
+    </section>
+
+    <section>
+        <h3>5. Most Active Cities</h3>
+        <p>List the top 5 cities with the highest number of distinct user registrations.</p>
+        <pre><Code>SELECT U.city, COUNT(DISTINCT R.user_id) AS distinct_registrations
+FROM Users U
+JOIN Registrations R ON U.user_id = R.user_id
+GROUP BY U.city
+ORDER BY distinct_registrations DESC
+LIMIT 5;</Code></pre>
+    </section>
+
+    <section>
+        <h3>6. Event Resource Summary</h3>
+        <p>Generate a report showing the number of resources (PDFs, images, links) uploaded for each event.</p>
+        <pre><Code>SELECT E.title, R.resource_type, COUNT(R.resource_id) AS resource_count
+FROM Events E
+LEFT JOIN Resources R ON E.event_id = R.event_id
+GROUP BY E.event_id, E.title, R.resource_type
+ORDER BY E.title, R.resource_type;</Code></pre>
+    </section>
+
+    <section>
+        <h3>7. Low Feedback Alerts</h3>
+        <p>List all users who gave feedback with a rating less than 3, along with their comments and associated event names.</p>
+        <pre><Code>SELECT U.full_name, F.rating, F.comments, E.title AS event_title
+FROM Feedback F
+JOIN Users U ON F.user_id = U.user_id
+JOIN Events E ON F.event_id = E.event_id
+WHERE F.rating < 3;</Code></pre>
+    </section>
+
+    <section>
+        <h3>8. Sessions per Upcoming Event</h3>
+        <p>Display upcoming events with the count of sessions scheduled for them.</p>
+        <pre><Code>SELECT E.title, COUNT(S.session_id) AS session_count
+FROM Events E
+LEFT JOIN Sessions S ON E.event_id = S.event_id
+WHERE E.status = 'upcoming'
+GROUP BY E.event_id, E.title
+ORDER BY E.title;</Code></pre>
+    </section>
+
+    <section>
+        <h3>9. Organizer Event Summary</h3>
+        <p>For each event organizer, show the number of events created and their current status (upcoming, completed, cancelled).</p>
+        <pre><Code>SELECT U.full_name AS organizer_name, E.status, COUNT(E.event_id) AS event_count
+FROM Users U
+JOIN Events E ON U.user_id = E.organizer_id
+GROUP BY U.user_id, U.full_name, E.status
+ORDER BY U.full_name, E.status;</Code></pre>
+    </section>
+
+    <section>
+        <h3>10. Feedback Gap</h3>
+        <p>Identify events that had registrations but received no feedback at all.</p>
+        <pre><Code>SELECT DISTINCT E.title
+FROM Events E
+JOIN Registrations R ON E.event_id = R.event_id
+LEFT JOIN Feedback F ON E.event_id = F.event_id
+WHERE F.feedback_id IS NULL;</Code></pre>
+    </section>
+
+    <section>
+        <h3>11. Daily New User Count</h3>
+        <p>Find the number of users who registered each day in the last 7 days.</p>
+        <pre><Code>SELECT DATE(registration_date) AS registration_day, COUNT(user_id) AS new_users_count
+FROM Users
+WHERE registration_date >= DATE_SUB(CURDATE(), INTERVAL 7 DAY)
+GROUP BY DATE(registration_date)
+ORDER BY registration_day;</Code></pre>
+    </section>
+
+    <section>
+        <h3>12. Event with Maximum Sessions</h3>
+        <p>List the event(s) with the highest number of sessions.</p>
+        <pre><Code>SELECT E.title, COUNT(S.session_id) AS session_count
+FROM Events E
+JOIN Sessions S ON E.event_id = S.event_id
+GROUP BY E.event_id, E.title
+ORDER BY session_count DESC
+LIMIT 1;</Code></pre>
+    </section>
+
+    <section>
+        <h3>13. Average Rating per City</h3>
+        <p>Calculate the average feedback rating of events conducted in each city.</p>
+        <pre><Code>SELECT E.city, AVG(F.rating) AS average_city_rating
+FROM Events E
+JOIN Feedback F ON E.event_id = F.event_id
+GROUP BY E.city
+ORDER BY average_city_rating DESC;</Code></pre>
+    </section>
+
+    <section>
+        <h3>14. Most Registered Events</h3>
+        <p>List top 3 events based on the total number of user registrations.</p>
+        <pre><Code>SELECT E.title, COUNT(R.registration_id) AS total_registrations
+FROM Events E
+JOIN Registrations R ON E.event_id = R.event_id
+GROUP BY E.event_id, E.title
+ORDER BY total_registrations DESC
+LIMIT 3;</Code></pre>
+    </section>
+
+    <section>
+        <h3>15. Event Session Time Conflict</h3>
+        <p>Identify overlapping sessions within the same event (i.e., session start and end times that conflict).</p>
+        <pre><Code>SELECT
+    S1.session_id AS session1_id,
+    S1.title AS session1_title,
+    S2.session_id AS session2_id,
+    S2.title AS session2_title,
+    E.title AS event_title
+FROM Sessions S1
+JOIN Sessions S2 ON S1.event_id = S2.event_id AND S1.session_id < S2.session_id
+JOIN Events E ON S1.event_id = E.event_id
+WHERE (S1.start_time < S2.end_time AND S1.end_time > S2.start_time);</Code></pre>
+    </section>
+
+    <section>
+        <h3>16. Unregistered Active Users</h3>
+        <p>Find users who created an account in the last 30 days but haven't registered for any events.</p>
+        <pre><Code>SELECT U.full_name, U.email
+FROM Users U
+LEFT JOIN Registrations R ON U.user_id = R.user_id
+WHERE U.registration_date >= DATE_SUB(CURDATE(), INTERVAL 30 DAY) AND R.registration_id IS NULL;</Code></pre>
+    </section>
+
+    <section>
+        <h3>17. Multi-Session Speakers</h3>
+        <p>Identify speakers who are handling more than one session across all events.</p>
+        <pre><Code>SELECT speaker_name, COUNT(session_id) AS session_count
+FROM Sessions
+GROUP BY speaker_name
+HAVING COUNT(session_id) > 1;</Code></pre>
+    </section>
+
+    <section>
+        <h3>18. Resource Availability Check</h3>
+        <p>List all events that do not have any resources uploaded.</p>
+        <pre><Code>SELECT E.title
+FROM Events E
+LEFT JOIN Resources R ON E.event_id = R.event_id
+WHERE R.resource_id IS NULL;</Code></pre>
+    </section>
+
+    <section>
+        <h3>19. Completed Events with Feedback Summary</h3>
+        <p>For completed events, show total registrations and average feedback rating.</p>
+        <pre><Code>SELECT
+    E.title,
+    COUNT(DISTINCT R.registration_id) AS total_registrations,
+    AVG(F.rating) AS average_feedback_rating
+FROM Events E
+LEFT JOIN Registrations R ON E.event_id = R.event_id
+LEFT JOIN Feedback F ON E.event_id = F.event_id
+WHERE E.status = 'completed'
+GROUP BY E.event_id, E.title;</Code></pre>
+    </section>
+
+    <section>
+        <h3>20. User Engagement Index</h3>
+        <p>For each user, calculate how many events they attended and how many feedbacks they submitted.</p>
+        <pre><Code>SELECT
+    U.full_name,
+    COUNT(DISTINCT R.event_id) AS attended_events_count,
+    COUNT(DISTINCT F.feedback_id) AS feedback_submitted_count
+FROM Users U
+LEFT JOIN Registrations R ON U.user_id = R.user_id
+LEFT JOIN Feedback F ON U.user_id = F.user_id
+GROUP BY U.user_id, U.full_name
+ORDER BY U.full_name;</Code></pre>
+    </section>
+
+    <section>
+        <h3>21. Top Feedback Providers</h3>
+        <p>List top 5 users who have submitted the most feedback entries.</p>
+        <pre><Code>SELECT U.full_name, COUNT(F.feedback_id) AS feedback_count
+FROM Users U
+JOIN Feedback F ON U.user_id = F.user_id
+GROUP BY U.user_id, U.full_name
+ORDER BY feedback_count DESC
+LIMIT 5;</Code></pre>
+    </section>
+
+    <section>
+        <h3>22. Duplicate Registrations Check</h3>
+        <p>Detect if a user has been registered more than once for the same event.</p>
+        <pre><Code>SELECT user_id, event_id, COUNT(*) AS registration_count
+FROM Registrations
+GROUP BY user_id, event_id
+HAVING COUNT(*) > 1;</Code></pre>
+    </section>
+
+    <section>
+        <h3>23. Registration Trends</h3>
+        <p>Show a month-wise registration count trend over the past 12 months.</p>
+        <pre><Code>SELECT
+    DATE_FORMAT(registration_date, '%Y-%m') AS registration_month,
+    COUNT(registration_id) AS monthly_registrations
+FROM Registrations
+WHERE registration_date >= DATE_SUB(CURDATE(), INTERVAL 12 MONTH)
+GROUP BY registration_month
+ORDER BY registration_month;</Code></pre>
+    </section>
+
+    <section>
+        <h3>24. Average Session Duration per Event</h3>
+        <p>Compute the average duration (in minutes) of sessions in each event.</p>
+        <pre><Code>SELECT
+    E.title,
+    AVG(TIMESTAMPDIFF(MINUTE, S.start_time, S.end_time)) AS average_session_duration_minutes
+FROM Events E
+JOIN Sessions S ON E.event_id = S.event_id
+GROUP BY E.event_id, E.title
+ORDER BY E.title;</Code></pre>
+    </section>
+
+</body>
+</html> 

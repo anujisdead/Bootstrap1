@@ -1,6 +1,6 @@
-# Web Development and Java Exercises
+# Web Development, Java, and SQL Exercises
 
-This repository contains a collection of exercises covering HTML, CSS, JavaScript, Bootstrap, and Core Java. Each folder contains specific exercises and examples for learning web development and Java programming concepts.
+This repository contains a collection of exercises covering HTML, CSS, JavaScript, Bootstrap, Core Java, and ANSI SQL (using MySQL syntax). Each folder contains specific exercises and examples for learning these concepts.
 
 ## Project Structure
 
@@ -14,26 +14,28 @@ This repository contains a collection of exercises covering HTML, CSS, JavaScrip
 ├── javascript exercise/
 │   ├── js-exercises.html      # JavaScript programming exercises
 │   └── main.js               # JavaScript implementation
-└── java-exercise/
-    ├── HelloWorld.java
-    ├── SimpleCalculator.java
-    ├── EvenOddChecker.java
-    ├── LeapYearChecker.java
-    ├── MultiplicationTable.java
-    ├── DataTypeDemonstration.java
-    ├── TypeCastingExample.java
-    ├── OperatorPrecedence.java
-    ├── GradeCalculator.java
-    ├── NumberGuessingGame.java
-    ├── FactorialCalculator.java
-    ├── MethodOverloading.java
-    ├── RecursiveFibonacci.java
-    ├── ArraySumAndAverage.java
-    ├── StringReversal.java
-    ├── PalindromeChecker.java
-    ├── ClassAndObjectCreation.java
-    ├── InheritanceExample.java
-    └── InterfaceImplementation.java # Core Java programming exercises
+├── java-exercise/
+│   ├── HelloWorld.java
+│   ├── SimpleCalculator.java
+│   ├── EvenOddChecker.java
+│   ├── LeapYearChecker.java
+│   ├── MultiplicationTable.java
+│   ├── DataTypeDemonstration.java
+│   ├── TypeCastingExample.java
+│   ├── OperatorPrecedence.java
+│   ├── GradeCalculator.java
+│   ├── NumberGuessingGame.java
+│   ├── FactorialCalculator.java
+│   ├── MethodOverloading.java
+│   ├── RecursiveFibonacci.java
+│   ├── ArraySumAndAverage.java
+│   ├── StringReversal.java
+│   ├── PalindromeChecker.java
+│   ├── ClassAndObjectCreation.java
+│   ├── InheritanceExample.java
+│   └── InterfaceImplementation.java # Core Java programming exercises
+└── sql-exercise/
+    └── sql-exercises-solutions.html # HTML file with SQL exercises and solutions
 ```
 
 ## How to Run Each Exercise
@@ -95,12 +97,22 @@ This repository contains a collection of exercises covering HTML, CSS, JavaScrip
    ```
 6. Interact with the program in the terminal as required by the exercise (e.g., provide input for the calculator).
 
+### SQL Exercises
+1. Navigate to the `sql-exercise` folder.
+2. Open the `sql-exercises-solutions.html` file in your web browser.
+3. You can do this by:
+   - Double-clicking the file.
+   - Dragging the file into your browser.
+   - Using the command: `open "sql-exercise/sql-exercises-solutions.html"`
+4. Note that this HTML file contains the solutions. To actually run these SQL queries, you will need a MySQL database server and a client tool (like MySQL Workbench, a terminal client, or a web-based tool like phpMyAdmin). You can then copy and paste the queries from the HTML file into your MySQL client.
+
 ## Development Tools
 
 ### Recommended Tools
-- Visual Studio Code or any code editor (with Java extensions)
-- Google Chrome (for web development debugging)
+- Visual Studio Code or any code editor (with extensions for Java, SQL, etc.)
+- Google Chrome (for web development debugging and viewing SQL solutions)
 - JDK (Java Development Kit) for Java exercises
+- MySQL Database Server and Client Tool (for SQL exercises)
 - Git (for version control)
 
 ### Browser Developer Tools
@@ -139,18 +151,26 @@ This repository contains a collection of exercises covering HTML, CSS, JavaScrip
    - Add comments to explain complex logic
    - Handle potential errors (e.g., user input)
 
+6. **SQL**
+   - Understand the database schema
+   - Use appropriate JOINs for combining tables
+   - Filter data using WHERE and HAVING clauses
+   - Group and aggregate data using GROUP BY and aggregate functions
+   - Order results using ORDER BY
+
 ## Getting Started
 
 1. Clone this repository
 2. Navigate to the exercise folder you want to work on
-3. Open the files in your code editor
-4. Follow the instructions in each exercise file
-5. Use the browser (for web) or terminal (for Java) to view and test your work
+3. Open the relevant files in your code editor
+4. Follow the instructions in each exercise file (for Java/Web) or the SQL solutions file
+5. Use the browser (for web and SQL solutions) or terminal (for Java) and a MySQL client (for SQL) to view and test your work
 
 ## Notes
 
 - Each exercise folder contains its own specific instructions within the files or a dedicated README.
 - Use browser developer tools for web debugging.
 - Use terminal for compiling and running Java code.
+- Use a MySQL client to run the SQL queries from the solutions file.
 - Keep your code organized and well-commented.
 - Test your code thoroughly.
